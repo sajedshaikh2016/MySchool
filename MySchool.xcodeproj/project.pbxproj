@@ -37,6 +37,96 @@
 			);
 			target = B40E5DCB2ECF4FC500DFAF50 /* MySchool */;
 		};
+		B40E5E002ECF518000DFAF50 /* Exceptions for "MySchool" folder in "MySchoolTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Interactors/AdminInteractor.swift,
+				Interactors/StudentInteractor.swift,
+				Interactors/TeacherInteractor.swift,
+				Models/Student.swift,
+				Models/Teacher.swift,
+				Models/User.swift,
+				Models/UserRole.swift,
+				Presenters/AdminPresenter.swift,
+				Presenters/StudentPresenter.swift,
+				Presenters/TeacherPresenter.swift,
+				Redux/Actions/AdminAction.swift,
+				Redux/Actions/AppAction.swift,
+				Redux/Actions/NavigationAction.swift,
+				Redux/Actions/StudentAction.swift,
+				Redux/Actions/TeacherAction.swift,
+				Redux/Reducers/AppReducer.swift,
+				Redux/State/AdminState.swift,
+				Redux/State/AppState.swift,
+				Redux/State/NavigationState.swift,
+				Redux/State/StudentState.swift,
+				Redux/State/TeacherState.swift,
+				Redux/Store/Store.swift,
+				Utilities/Environment.swift,
+				Views/AdminViews/AddAdminView.swift,
+				Views/AdminViews/AdminDetailView.swift,
+				Views/AdminViews/AdminListView.swift,
+				Views/AdminViews/AdminRowView.swift,
+				Views/AdminViews/EditAdminView.swift,
+				Views/Shared/ErrorView.swift,
+				Views/StudentViews/AddStudentView.swift,
+				Views/StudentViews/EditStudentView.swift,
+				Views/StudentViews/StudentDetailView.swift,
+				Views/StudentViews/StudentListView.swift,
+				Views/StudentViews/StudentRowView.swift,
+				Views/TeacherViews/AddTeacherView.swift,
+				Views/TeacherViews/EditTeacherView.swift,
+				Views/TeacherViews/TeacherDetailView.swift,
+				Views/TeacherViews/TeacherListView.swift,
+				Views/TeacherViews/TeacherRowView.swift,
+			);
+			target = B40E5DDC2ECF4FC700DFAF50 /* MySchoolTests */;
+		};
+		B40E5E012ECF518000DFAF50 /* Exceptions for "MySchool" folder in "MySchoolUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Interactors/AdminInteractor.swift,
+				Interactors/StudentInteractor.swift,
+				Interactors/TeacherInteractor.swift,
+				Models/Student.swift,
+				Models/Teacher.swift,
+				Models/User.swift,
+				Models/UserRole.swift,
+				Presenters/AdminPresenter.swift,
+				Presenters/StudentPresenter.swift,
+				Presenters/TeacherPresenter.swift,
+				Redux/Actions/AdminAction.swift,
+				Redux/Actions/AppAction.swift,
+				Redux/Actions/NavigationAction.swift,
+				Redux/Actions/StudentAction.swift,
+				Redux/Actions/TeacherAction.swift,
+				Redux/Reducers/AppReducer.swift,
+				Redux/State/AdminState.swift,
+				Redux/State/AppState.swift,
+				Redux/State/NavigationState.swift,
+				Redux/State/StudentState.swift,
+				Redux/State/TeacherState.swift,
+				Redux/Store/Store.swift,
+				Utilities/Environment.swift,
+				Views/AdminViews/AddAdminView.swift,
+				Views/AdminViews/AdminDetailView.swift,
+				Views/AdminViews/AdminListView.swift,
+				Views/AdminViews/AdminRowView.swift,
+				Views/AdminViews/EditAdminView.swift,
+				Views/Shared/ErrorView.swift,
+				Views/StudentViews/AddStudentView.swift,
+				Views/StudentViews/EditStudentView.swift,
+				Views/StudentViews/StudentDetailView.swift,
+				Views/StudentViews/StudentListView.swift,
+				Views/StudentViews/StudentRowView.swift,
+				Views/TeacherViews/AddTeacherView.swift,
+				Views/TeacherViews/EditTeacherView.swift,
+				Views/TeacherViews/TeacherDetailView.swift,
+				Views/TeacherViews/TeacherListView.swift,
+				Views/TeacherViews/TeacherRowView.swift,
+			);
+			target = B40E5DE62ECF4FC700DFAF50 /* MySchoolUITests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +134,8 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				B40E5DEF2ECF4FC700DFAF50 /* Exceptions for "MySchool" folder in "MySchool" target */,
+				B40E5E002ECF518000DFAF50 /* Exceptions for "MySchool" folder in "MySchoolTests" target */,
+				B40E5E012ECF518000DFAF50 /* Exceptions for "MySchool" folder in "MySchoolUITests" target */,
 			);
 			path = MySchool;
 			sourceTree = "<group>";

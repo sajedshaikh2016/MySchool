@@ -10,23 +10,27 @@ import SwiftData
 
 @main
 struct MySchoolApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+    let store: AppStore
+    let modelContainer: ModelContainer
+    
+    init() {
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            modelContainer = try ModelContainer(for: User.self, Student.self, Teacher.self)
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            fatalError("Failed to initialize ModelContainer: \(error)")
         }
-    }()
-
+        
+        self.store = AppStore(
+            initialState: .initial,
+            reducer: appReducer
+        )
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(modelContainer)
+                .environment(store)
         }
-        .modelContainer(sharedModelContainer)
     }
 }

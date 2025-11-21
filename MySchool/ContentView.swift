@@ -9,48 +9,32 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @Environment(AppStore.self) private var store
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        @Bindable var store = store
+        
+        TabView(selection: Binding(
+            get: { store.state.navigationState.selectedTab },
+            set: { store.send(.navigationAction(.selectTab($0))) }
+        )) {
+            StudentListView()
+                .tabItem {
+                    Label("Students", systemImage: "person.3")
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                .tag(AppTab.students)
+            
+            TeacherListView()
+                .tabItem {
+                    Label("Teachers", systemImage: "person.badge.shield.checkmark")
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                .tag(AppTab.teachers)
+            
+            AdminListView()
+                .tabItem {
+                    Label("Admins", systemImage: "person.crop.square")
                 }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+                .tag(AppTab.admins)
         }
     }
 }
